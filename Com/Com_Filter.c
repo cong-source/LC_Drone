@@ -1,0 +1,18 @@
+﻿#include "Com_Filter.h"
+
+
+struct _1_ekf_filter ekf[3] = {
+    {0.02, 0, 0, 0, 0.001, 0.543},
+    {0.02, 0, 0, 0, 0.001, 0.543},
+    {0.02, 0, 0, 0, 0.001, 0.543}
+};
+
+void Kalman_1(struct _1_ekf_filter *ekf,float input)  //一维卡尔曼
+{
+    ekf->Now_P = ekf->LastP + ekf->Q;
+    ekf->Kg = ekf->Now_P / (ekf->Now_P + ekf->R);
+    ekf->out = ekf->out + ekf->Kg * (input - ekf->out);
+    ekf->LastP = (1-ekf->Kg) * ekf->Now_P ;
+}
+
+

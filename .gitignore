@@ -1,0 +1,33 @@
+# === Keil MDK-ARM 编译产物与生成文件 ===
+# 编译输出目录（CAR_HAL、DebugConfig、RTE 等）
+MDK-ARM/*/
+
+# 用户专属 Keil 配置（含开发者名字，勿提交）
+*.uvguix.*
+*.uvoptx
+
+# 编译/链接产物
+*.lst
+*.htm
+*.map
+*.axf
+*.hex
+*.bin
+*.elf
+*.o
+*.d
+*.crf
+*.lnp
+*.dep
+*.sct
+*.bak
+*.build_log.htm
+
+# === STM32CubeMX 缓存 ===
+.mxproject
+
+# === 通用 ===
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
